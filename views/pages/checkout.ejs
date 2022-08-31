@@ -50,7 +50,7 @@
                             <div class="center-desk">
                                 
                                 <div class="logo">
-                                    <a href="/index"><img src="images/logo.png" alt="#"></a>
+                                    <a href="/index"><img src="images/logo.png" alt="#"style="margin-left: -50%;"></a>
                                 </div>
                             </div>
                         </div>
@@ -59,13 +59,20 @@
                         <div class="menu-area">
                             <div class="limit-box">
                                 <nav class="main-menu">
-                                    <ul class="menu-area-main">
-                                        <li class="active"> <a href="/index">Home</a> </li>
-                                        <li class="active"> <a href="/about">About Us</a> </li>
-                                        <li class ="active"><a href="/brand">Products</a></li>
-                                        <li class="active"><a href="/cart">My Cart</a></li>
-                                        <li class="active"><a href="/order">My Order</a></li>
-                                        <li class="active"><a href="/account">Log In</a></li>
+                                    <ul class="menu-area-main"style="margin-left: -17%;">
+                                        <li class="active nav-btn"> <a href="/index" class="text-muted">Home</a> </li>
+                                        <li class="active nav-btn"> <a href="/about" class="text-muted">About Us</a> </li>
+                                        <li class ="active nav-btn"><a href="/brand" class="text-muted">Products</a></li>
+                                        <li class="active nav-btn"><a href="/cart" class="text-muted">My Cart</a></li>
+                                        <li class="active nav-btn"><a href="/order" class="text-muted">My Order</a></li>
+                                        <li class="active nav-btn"><a href="/expert" class="text-muted">Experts</a></li>
+                                        <!--
+                                        <li class="active nav-btn"><a href="/forum" class="text-muted">Forum</a></li>
+                                        -->
+                                        <li class="active nav-btn"><a href="/account" class="text-muted">Log Out</a></li>
+                                        <!--<li class="last">
+                                            <a href="#"><img src="images/search_icon.png" alt="icon" /></a>
+                                        </li>-->
                                     </ul>
                                 </nav>
                             </div>
@@ -82,9 +89,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Enter your delivery address</h2>
+                        <h2>Enter your Information</h2>
                     </div>
-                    <form class="main_form">
+                    <form class="main_form" method="post"action="/confirm_order">
                         <div class="row">
                             <div class="col-md-12">
                                 <input class="form-control" placeholder="Your name" type="text" name="Your Name">
@@ -93,21 +100,23 @@
                                 <input class="form-control" placeholder="Email(optional)" type="text" name="Email">
                             </div>
                             <div class=" col-md-12">
-                                <input class="form-control" placeholder="Phone No." type="text" name="Phone">
+                                <input class="form-control" placeholder="Phone No." name="phn" type="text">
                             </div>
                             <div class="col-md-12">
-                                <textarea class="textarea" placeholder="Address"></textarea>
+                                <textarea class="textarea" placeholder="Address" name="address"></textarea>
                             </div>
-                            <!--<div class=" col-md-12">
+                            <div class=" col-md-12">
                                 <button class="send">Place order</button>
-                            </div>-->
+                            </div>
                         </div>
                     </form>
+                    <!--
                     <div>
                         <form style="text-align:center;padding-top: 20px;"method="post"action="/confirm_order">
                             <input style="background-color:rgb(17, 18, 69) ;color:aliceblue;cursor:pointer" type="submit"name=""value="Place order">
                         </form>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
