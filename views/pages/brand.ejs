@@ -14,6 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
@@ -30,6 +31,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="css/jarifIndex.css">
 </head>
 <!-- body -->
 
@@ -52,7 +54,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="/index"><img src="images/logo.png" alt="#"></a>
+                                    <a href="/index"><img src="images/logo.png" alt="#"style="margin-left: -50%;"></a>
                                 </div>
                             </div>
                         </div>
@@ -61,14 +63,20 @@
                         <div class="menu-area">
                             <div class="limit-box">
                                 <nav class="main-menu">
-                                    <ul class="menu-area-main">
-                                        <li class="active"> <a href="/index">Home</a> </li>
-                                        <li class="active"> <a href="/about">About Us</a> </li>
-                                        <li class ="active"><a href="/brand">Products</a></li>
-                                        <li class="active"><a href="/cart">My Cart</a></li>
-                                        <!--<li class="active"><a href="contact.html">Contact Us</a></li>-->
-                                        <li class="active"><a href="/order">My Order</a></li>
-                                        <li class="active"><a href="/account">Log In</a></li>
+                                    <ul class="menu-area-main"style="margin-left: -17%;">
+                                        <li class="active nav-btn"> <a href="/index" class="text-muted">Home</a> </li>
+                                        <li class="active nav-btn"> <a href="/about" class="text-muted">About Us</a> </li>
+                                        <li class ="active nav-btn"><a href="/brand" class="text-muted">Products</a></li>
+                                        <li class="active nav-btn"><a href="/cart" class="text-muted">My Cart</a></li>
+                                        <li class="active nav-btn"><a href="/order" class="text-muted">My Order</a></li>
+                                        <li class="active nav-btn"><a href="/expert" class="text-muted">Experts</a></li>
+                                        <!--
+                                        <li class="active nav-btn"><a href="/forum" class="text-muted">Forum</a></li>
+                                        -->
+                                        <li class="active nav-btn"><a href="/account" class="text-muted">Log Out</a></li>
+                                        <!--<li class="last">
+                                            <a href="#"><img src="images/search_icon.png" alt="icon" /></a>
+                                        </li>-->
                                     </ul>
                                 </nav>
                             </div>
@@ -79,16 +87,33 @@
         </div>
         <!-- end header inner -->
     </header>
-    <div class="brand-bg">
+    <div class="brand-bg ">
         <div class="container">
-            <div class="row">
+            <div class="row allproducts">
+
                 <% result.forEach((item)=>{ %>
-                <div class="col-xl-4 col-lg-4 col-md-4   col-sm-6 margin">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin border border-bottom-0 border-info margin">
                     <div class="brand_box">
-                        <img src="images/<%=item.medicine_image%>" alt="img" />
+                        
+                        <!--href="/product_details"-->
+                        
+                            
+                            <a style="cursor: pointer;">
+                            <img src="images/<%=item.medicine_image%>" alt="img" />
+                            </a>
+                        
                         <span>Name:<%=item.medicine_name%></span>
                         <span>Category:<%=item.medicine_category%></span>
                         <h4>MRP:<strong class="red"><%=item.medicine_price%></strong> &#2547</h4>
+                        <form method="post" action="/details_product">
+                            <input type="hidden"value="<%=item.medicine_id%>"name="id">
+                            <input type="hidden"value="<%=item.medicine_name%>"name="name">
+                            <input type="hidden"value="<%=item.medicine_category%>"name="category">
+                            <input type="hidden"value="<%=item.medicine_price%>"name="price">
+                            <input type="hidden"value="<%=item.medicine_image%>"name="image">
+                            <input type="submit" value="Product Details" class="btn btn-primary">
+                        </form>
+<!--
                         <form action="/add_to_cart" method="post">
                             <input type="hidden" name="id" value="<%=item.medicine_id%>">
                                 <input type="hidden" name="name" value="<%=item.medicine_name%>">
@@ -98,6 +123,7 @@
                                 <input type="hidden" name="image" value="<%=item.medicine_image%>">
                                 <input type="submit" value="Add to cart" class="btn btn-primary">
                         </form>
+-->
                     </div>
                 </div>
                     <%})%>
