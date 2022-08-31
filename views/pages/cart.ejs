@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="css/jarifIndex.css">
 </head>
 <body>
     <!-- loader  -->
@@ -49,7 +50,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="/index"><img src="images/logo.png" alt="#"></a>
+                                    <a href="/index"><img src="images/logo.png" alt="#"style="margin-left: -50%;"></a>
                                 </div>
                             </div>
                         </div>
@@ -58,13 +59,20 @@
                         <div class="menu-area">
                             <div class="limit-box">
                                 <nav class="main-menu">
-                                    <ul class="menu-area-main">
-                                        <li class="active"> <a href="/index">Home</a> </li>
-                                        <li class="active"> <a href="/about">About Us</a> </li>
-                                        <li class ="active"><a href="/brand">Products</a></li>
-                                        <li class="active"><a href="/cart">My Cart</a></li>
-                                        <li class="active"><a href="/order">My Order</a></li>
-                                        <li class="active"><a href="/account">Log In</a></li>
+                                    <ul class="menu-area-main"style="margin-left: -17%;">
+                                        <li class="active nav-btn"> <a href="/index" class="text-muted">Home</a> </li>
+                                        <li class="active nav-btn"> <a href="/about" class="text-muted">About Us</a> </li>
+                                        <li class ="active nav-btn"><a href="/brand" class="text-muted">Products</a></li>
+                                        <li class="active nav-btn"><a href="/cart" class="text-muted">My Cart</a></li>
+                                        <li class="active nav-btn"><a href="/order" class="text-muted">My Order</a></li>
+                                        <li class="active nav-btn"><a href="/expert" class="text-muted">Experts</a></li>
+                                        <!--
+                                        <li class="active nav-btn"><a href="/forum" class="text-muted">Forum</a></li>
+                                        -->
+                                        <li class="active nav-btn"><a href="/account" class="text-muted">Log Out</a></li>
+                                        <!--<li class="last">
+                                            <a href="#"><img src="images/search_icon.png" alt="icon" /></a>
+                                        </li>-->
                                     </ul>
                                 </nav>
                             </div>
@@ -93,21 +101,21 @@
                 <td>
                     <div>
                         <div style="float:left">
-                         <img src="images/<%=item.image%>"width="50"height="80">
+                         <img src="images/<%=item.medicine_image%>"width="50"height="80">
                          <!--<img src="images/1.png"width="50"height="80">-->
                         </div>
                         <div>
-                            <p><%=item.name%></p>
+                            <p><%=item.medicine_name%></p>
                             <!--<p>Power Gel</p>-->
                             <!--<small><span>120 &#2547</span></small>-->
-                            <% if(item.sale_price){%>
-                                <small><span><%=item.sale_price%> &#2547</span></small>
+                            <% if(item.medicine_sale_price){%>
+                                <small><span><%=item.medicine_sale_price%> &#2547</span></small>
                             <% }else{%>
-                                <small><span><%=item.price%> &#2547</span></small>
+                                <small><span><%=item.medicine_price%> &#2547</span></small>
                             <%}%> 
                             <br>
                             <form method="post" action="/remove_product">
-                                <input type="hidden" name="id"value="<%=item.id%>">
+                                <input type="hidden" name="id"value="<%=item.medicine_id%>">
                                 <input style="cursor:pointer;" type="submit" name="remove_btn"value="remove">
                             </form>
                         </div>
@@ -115,18 +123,18 @@
                 </td>
                 <td style="text-align: center;">
                     <form method="post"action="/edit_product_quantity">
-                        <input type="hidden"value="<%=item.id%>"name="id">
+                        <input type="hidden"value="<%=item.medicine_id%>"name="id">
                         <input style="border:none;background: none;cursor:pointer"type="submit"value="-"name="decrease_product_quantity">
-                        <input style="width: 50px;text-align: center;background-color: #e0ce0b;" type="text"value="<%=item.quantity%>"name="quantity"readonly>
+                        <input style="width: 50px;text-align: center;background-color: #e0ce0b;" type="text"value="<%=item.medicine_quantity%>"name="quantity"readonly>
                         <input style="border:none;background: none;cursor:pointer"type="submit"value="+"name="increase_product_quantity">
                     </form>
                 </td>
                 <td style="text-align: right;padding-right: 10px;">
                     <!--<span>120 &#2547</span>-->
-                    <% if(item.sale_price){%>
-                        <span><%=item.sale_price*item.quantity%> &#2547</span>
+                    <% if(item.medicine_sale_price){%>
+                        <span><%=item.medicine_sale_price*item.medicine_quantity%> &#2547</span>
                     <%}else{%>
-                        <span><%=item.price*item.quantity%> &#2547</span>
+                        <span><%=item.medicine_price*item.medicine_quantity%> &#2547</span>
                     <%}%>
                     
                 </td>
