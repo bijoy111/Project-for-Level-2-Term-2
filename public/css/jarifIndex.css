@@ -1,0 +1,113 @@
+footer{
+	font-size: 120%;
+	color: #fff;
+	padding-bottom: 0.5%;
+	margin: 1% 0;
+	text-align: center;
+	background-color: #213;
+    font-family:Georgia;
+}
+
+footer.h6{
+    font-size: larger;
+}
+
+.footSec{
+	background-color: rgb(232, 232, 223);
+	margin-top: 3%;
+}
+
+.fa-heart{
+	color: rgb(200,0,0);
+}
+
+footer p{
+    font-size: 105%;
+    margin-top: 2%;
+}
+
+.allproducts img{
+    width: 40%;
+}
+
+.allproducts img:hover {
+    width: 60%;
+    opacity: 0.8;
+}
+
+  
+  .allproducts a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+  .allproducts a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  
+.brand_box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+  .brand_box:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  .brand_box:hover {
+    opacity: 0.8;
+}
+
+.nav-btn {
+    stroke: #EC0033;
+    stroke-width: 4;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.nav-btn:hover{
+  background: rgb(255,130,130);
+  background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
+  background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+  background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-btn:hover{
+    stroke-width: 4;
+    stroke-dasharray: 196, 543;
+    stroke-dashoffset: 437;
+}
+
+  .brandbg{
+    background: #abbaab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
