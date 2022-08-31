@@ -8,11 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>medigreen</title>
+    <title>Medigreen</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
+    <!--One extra jarifs add-->
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
@@ -29,6 +32,10 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    
+    <!--Jarifs add-->
+    <link rel="stylesheet" href="css/jarifIndex.css">
+    <link rel="stylesheet" href="css/signUp.css">
 </head>
 <body class="main-layout">
     <!-- loader  -->
@@ -52,7 +59,7 @@
                             <div class="center-desk">
                                 
                                 <div class="logo">
-                                    <a href="/index"><img src="images/logo.png" alt="#"></a>
+                                    <a href="/index"><img src="images/logo.png" alt="#"style="margin-left: -50%;"></a>
                                 </div>
                             </div>
                         </div>
@@ -61,13 +68,18 @@
                         <div class="menu-area">
                             <div class="limit-box">
                                 <nav class="main-menu">
-                                    <ul class="menu-area-main">
-                                        <li class="active"> <a href="/index">Home</a> </li>
-                                        <li class="active"> <a href="/about">About Us</a> </li>
-                                        <li class ="active"><a href="/brand">Products</a></li>
-                                        <li class="active"><a href="/cart">My Cart</a></li>
-                                        <li class="active"><a href="/order">My Order</a></li>
-                                        <li class="active"><a href="/account">Log In</a></li>
+                                    <ul class="menu-area-main"style="margin-left: -17%;">
+                                        <li class="active nav-btn"><a href="#!" onclick="loginFirst()" class="text-muted">Home</a> </li>
+                                        <li class="active nav-btn"><a href="#!" onclick="loginFirst()" class="text-muted">About Us</a> </li>
+                                        <li class="active nav-btn"><a href="#!" onclick="loginFirst()" class="text-muted">Products</a></li>
+                                        <li class="active nav-btn"><a href="#!" onclick="loginFirst()" class="text-muted">My Cart</a></li>
+                                        
+                                        <!--
+                                        <li class="active nav-btn"><a href="/forum" class="text-muted">Forum</a></li>
+                                        -->
+                                        <li class="active nav-btn"><a href="#!" onclick="loginFirst()" class="text-muted">My Order</a></li>
+                                        <li class="active nav-btn"><a href="#!" onclick="loginFirst()" class="text-muted">Experts</a></li>
+                                        <li class="active nav-btn"><a href="/account"class="text-muted">Log In</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -78,62 +90,89 @@
         </div>
         <!-- end header inner -->
     </header>
-<div class="login_body"> 
-   <div class="register_container">
-        <div class="login_header">
-            <h2 style="text-align: center;padding-top:2px">Sign Up</h2>
-        </div>
-        <div class="login_main">
-            <form style="text-align: center;"method="post"action="/regester">
-                <span>
-                    <i class="fa fa-user"></i>
-                    <input  type="text" placeholder="Name" name="name">
-                </span><br>
-                <span>
-                    <i class="fa fa-user"></i>
-                    <input  type="text" placeholder="Phone Number" name="phone_no">
-                </span><br>
-                <span>
-                    <i class="fa fa-user"></i>
-                    <input type="text" placeholder="address" name="address">
-                </span><br>
-                <span>
-                    <i class="fa fa-lock"></i>
-                    <input type="password" placeholder="password" name="password">
-                </span><br>
-                    <button>Submit</button>
-   
-            </form>
-        </div>
-    </div>
-</div>
-<!-- Javascript files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/plugin.js"></script>
-<!-- sidebar -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
-<!-- javascript -->
-<script src="js/owl.carousel.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $(".fancybox").fancybox({
-            openEffect: "none",
-            closeEffect: "none"
-        });
-
-        $(".zoom").hover(function() {
-
-            $(this).addClass('transition');
-        }, function() {
-
-            $(this).removeClass('transition');
-        });
-    });
-</script>
-</body>
-</html>
+    <div class="login_body"> 
+        <div class="register_container">
+             <div class="login_header">
+                 <h2 style="text-align: center;padding-top:2px">Sign Up</h2>
+             </div>
+             <div class="login_main">
+                 <form style="text-align: center;"method="post"action="/regester">
+                     <span>
+                         <i class="fa fa-user"></i>
+                         <input  type="text" placeholder="Unique User_Name" name="name" required>
+                     </span><br>
+                     <span>
+                         <i class="fa fa-user"></i>
+                         <input  type="text" placeholder="Unique Phone Number" name="phone_no" required>
+                     </span><br>
+                     <span>
+                         <i class="fa fa-user"></i>
+                         <input type="text" placeholder="address" name="address" required>
+                     </span><br>
+                     <span>
+                         <i class="fa fa-lock"></i>
+                         <input type="password" placeholder="password" name="password" required>
+                     </span><br>
+                         <button>Submit</button>
+        
+                 </form>
+             </div>
+         </div>
+     </div>
+     
+     
+     <!--Popup screen. if existing data is given, show up-->
+     <div id="popup1" class="overlay">
+         <div class="popup">
+             <h2>Data already exists</h2>
+             <a class="close" href="#">&times;</a>
+             <div class="content">
+                 Name or phone number is not unique. Try another one so that all the data given is unique
+             </div>
+         </div>
+     </div>
+     <!--Popup screen-->
+     
+     
+     <!--Footer-->
+         <!-- Copyright
+         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+             © 2022 Copyright: (MediGreen)
+             <a class="text-reset fw-bold" href="https://www.facebook.com/bijoysaeem">Bijoy</a> -
+             <a class="text-reset fw-bold" href="https://www.facebook.com/JarifIslam001/">Jarif</a>
+         </div>
+         Copyright -->
+         <!--Footer ends-->
+     <!-- Javascript files-->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+     <script src="js/jquery-3.0.0.min.js"></script>
+     <script src="js/plugin.js"></script>
+     <!-- sidebar -->
+     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+     <script src="js/custom.js"></script>
+     <!-- javascript -->
+     <script src="js/owl.carousel.js"></script>
+     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+     <script>
+         $(document).ready(function() {
+             $(".fancybox").fancybox({
+                 openEffect: "none",
+                 closeEffect: "none"
+             });
+     
+             $(".zoom").hover(function() {
+     
+                 $(this).addClass('transition');
+             }, function() {
+     
+                 $(this).removeClass('transition');
+             });
+         });
+         function loginFirst(){
+            alert('Please login first');
+        }
+     </script>
+     </body>
+     </html>
