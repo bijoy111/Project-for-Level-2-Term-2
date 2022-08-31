@@ -2202,7 +2202,7 @@ ul.location_icon span {
 .login_body {
 	font-family: sans-serif;	
 	background-image: url(../images/login_bg2.jpg);
-     height:584px;
+     height:650px;
 	background-repeat: no-repeat;
 	overflow: hidden;
 	background-size: cover;
@@ -2235,7 +2235,7 @@ ul.location_icon span {
 .login_header {
 	text-align: center;
 	padding-top: 40px;
-     padding-bottom:50px;
+     padding-bottom:30px;
 }
 
 .login_header h1 {
@@ -2272,10 +2272,10 @@ button{
 }
 .login_main button {
 	padding-left: 0;
-	background-color: #83acf1;
+	background-color: #6a91d3;
 	letter-spacing: 1px;
 	font-weight: bold;
-	margin-bottom: 70px;
+	margin-bottom: 30px;
 }
 
 .login_main button:hover {
